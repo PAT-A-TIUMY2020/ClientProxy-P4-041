@@ -15,6 +15,67 @@ namespace ClientProxy_P4_041.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MathFault", Namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041")]
+    [System.SerializableAttribute()]
+    public partial class MathFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PesanField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Kode {
+            get {
+                return this.KodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KodeField, value) != true)) {
+                    this.KodeField = value;
+                    this.RaisePropertyChanged("Kode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Pesan {
+            get {
+                return this.PesanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PesanField, value) != true)) {
+                    this.PesanField = value;
+                    this.RaisePropertyChanged("Pesan");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Koordinat", Namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041")]
     [System.SerializableAttribute()]
     public partial class Koordinat : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -75,64 +136,69 @@ namespace ClientProxy_P4_041.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.iMatematika")]
-    public interface iMatematika {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IMatematika")]
+    public interface IMatematika {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Tambah", ReplyAction="http://tempuri.org/iMatematika/TambahResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Tambah", ReplyAction="http://tempuri.org/IMatematika/TambahResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClientProxy_P4_041.ServiceReference1.MathFault), Action="http://tempuri.org/IMatematika/TambahMathFaultFault", Name="MathFault", Namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041")]
         int Tambah(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Tambah", ReplyAction="http://tempuri.org/iMatematika/TambahResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Tambah", ReplyAction="http://tempuri.org/IMatematika/TambahResponse")]
         System.Threading.Tasks.Task<int> TambahAsync(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Kurang", ReplyAction="http://tempuri.org/iMatematika/KurangResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Kurang", ReplyAction="http://tempuri.org/IMatematika/KurangResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClientProxy_P4_041.ServiceReference1.MathFault), Action="http://tempuri.org/IMatematika/KurangMathFaultFault", Name="MathFault", Namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041")]
         int Kurang(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Kurang", ReplyAction="http://tempuri.org/iMatematika/KurangResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Kurang", ReplyAction="http://tempuri.org/IMatematika/KurangResponse")]
         System.Threading.Tasks.Task<int> KurangAsync(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Kali", ReplyAction="http://tempuri.org/iMatematika/KaliResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Kali", ReplyAction="http://tempuri.org/IMatematika/KaliResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClientProxy_P4_041.ServiceReference1.MathFault), Action="http://tempuri.org/IMatematika/KaliMathFaultFault", Name="MathFault", Namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041")]
         int Kali(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Kali", ReplyAction="http://tempuri.org/iMatematika/KaliResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Kali", ReplyAction="http://tempuri.org/IMatematika/KaliResponse")]
         System.Threading.Tasks.Task<int> KaliAsync(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Bagi", ReplyAction="http://tempuri.org/iMatematika/BagiResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Bagi", ReplyAction="http://tempuri.org/IMatematika/BagiResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClientProxy_P4_041.ServiceReference1.MathFault), Action="http://tempuri.org/IMatematika/BagiMathFaultFault", Name="MathFault", Namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041")]
         int Bagi(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/Bagi", ReplyAction="http://tempuri.org/iMatematika/BagiResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/Bagi", ReplyAction="http://tempuri.org/IMatematika/BagiResponse")]
         System.Threading.Tasks.Task<int> BagiAsync(int a, int b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/TKoordinat", ReplyAction="http://tempuri.org/iMatematika/TKoordinatResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/TKoordinat", ReplyAction="http://tempuri.org/IMatematika/TKoordinatResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(ClientProxy_P4_041.ServiceReference1.MathFault), Action="http://tempuri.org/IMatematika/TKoordinatMathFaultFault", Name="MathFault", Namespace="http://schemas.datacontract.org/2004/07/ServiceMtk_P2_20180140041")]
         ClientProxy_P4_041.ServiceReference1.Koordinat TKoordinat(ClientProxy_P4_041.ServiceReference1.Koordinat a, ClientProxy_P4_041.ServiceReference1.Koordinat b);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/iMatematika/TKoordinat", ReplyAction="http://tempuri.org/iMatematika/TKoordinatResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMatematika/TKoordinat", ReplyAction="http://tempuri.org/IMatematika/TKoordinatResponse")]
         System.Threading.Tasks.Task<ClientProxy_P4_041.ServiceReference1.Koordinat> TKoordinatAsync(ClientProxy_P4_041.ServiceReference1.Koordinat a, ClientProxy_P4_041.ServiceReference1.Koordinat b);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface iMatematikaChannel : ClientProxy_P4_041.ServiceReference1.iMatematika, System.ServiceModel.IClientChannel {
+    public interface IMatematikaChannel : ClientProxy_P4_041.ServiceReference1.IMatematika, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class iMatematikaClient : System.ServiceModel.ClientBase<ClientProxy_P4_041.ServiceReference1.iMatematika>, ClientProxy_P4_041.ServiceReference1.iMatematika {
+    public partial class MatematikaClient : System.ServiceModel.ClientBase<ClientProxy_P4_041.ServiceReference1.IMatematika>, ClientProxy_P4_041.ServiceReference1.IMatematika {
         
-        public iMatematikaClient() {
+        public MatematikaClient() {
         }
         
-        public iMatematikaClient(string endpointConfigurationName) : 
+        public MatematikaClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public iMatematikaClient(string endpointConfigurationName, string remoteAddress) : 
+        public MatematikaClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public iMatematikaClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MatematikaClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public iMatematikaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public MatematikaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
